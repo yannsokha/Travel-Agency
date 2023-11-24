@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/auth-test',function () {
+    return view('layouts.auth_app');
+});
+
+//for switching language route
+Route::get('/lang/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return redirect()->back();
+  });

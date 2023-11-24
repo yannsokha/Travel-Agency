@@ -27,6 +27,7 @@ Route::get(uri:'/booking',action:[FrontPageController::class,'booking'])->name(n
 
 
 
+
 // Route::get(uri:'master',action:function(){
 //      return view(view:'front_master');
 // });

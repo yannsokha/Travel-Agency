@@ -94,6 +94,26 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
+                
+                <?php  
+        $flag = app()->getlocale();
+                if($flag=="en"){
+                    $flag="us";
+                }
+            ?>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle               
+            " data-bs-toggle="dropdown"><i
+                    class="flag-icon flag-icon-{{ $flag=='kh'?'kh':'' }}{{ $flag=='us'?'us':'' }} mr-2"></i> {{
+                $flag=='kh'?'ភាសាខ្មែរ':'' }}{{
+                $flag=='us'?"English":'' }}</a>
+            <div class="dropdown-menu m-0">
+                <a href="{{url('lang/kh')}}" class="dropdown-item {{ $flag=='kh'?'active':'' }}                    
+                    "><i class="flag-icon flag-icon-kh mr-2"></i> ភាសាខ្មែរ</a>
+                <a href="{{url('lang/en')}}" class="dropdown-item {{ $flag=='us'?'active':'' }}"><i
+                        class="flag-icon flag-icon-us mr-2"></i> English</a>
+            </div>
+        </div>
                 <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             </div>
         </nav>
